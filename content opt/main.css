@@ -1,0 +1,132 @@
+:root {
+  --primary-txt: hsl(220, 40%, 40%);
+  --primary-bg: hsl(220, 40%, 90%);
+  --secondary-txt: hsl(220, 20%, 30%);
+  --secondary-bg: hsl(220, 20%, 80%);
+
+  --radius: 0.5rem;
+
+  --font-xxxl: 5.61rem;
+  --font-xxl: 4.209rem;
+  --font-xl: 3.157rem;
+  --font-lg: 2.369rem;
+  --font-md: 1.777rem;
+  --font-sm: 1.333rem;
+  --font-xs: 1rem;
+  --color-cta-bg: hsl(35, 100%, 55%);
+  --color-cta-hover: hsl(35, 100%, 65%);
+  --color-cta-text: hsl(220, 50%, 12%);
+  --color-cta-outline: hsl(0, 0%, 100%);
+}
+
+*,
+*::after,
+*::before,
+*::backdrop {
+  box-sizing: border-box;
+  font-family: var(--font-sans);
+}
+html {
+  font-weight: 300;
+  color: var(--primary-txt);
+  background-color: var(--primary-bg);
+}
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  font-weight: 300;
+}
+pre {
+  font-family: var(--font-mono);
+}
+button {
+  background-color: var(--color-cta-bg);
+  color: var(--color-cta-text);
+  font-weight: 700;
+  font-size: var(--font-xs);
+  padding: 0.75rem 2rem;
+  margin: 0.5rem 1rem 2rem 0;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+button:hover {
+  background-color: var(--color-cta-bg-hover);
+}
+button:focus-visible {
+  outline: 3px solid var(--color-cta-outline);
+  outline-offset: 3px;
+}
+header,
+main {
+  max-width: min(90vw, 1072px);
+  padding: 2rem;
+  margin-inline: auto;
+  background-color: var(--primary-txt);
+  color: var(--primary-bg);
+}
+header h1 {
+  font-size: var(--font-xl);
+}
+header h2 {
+  font-size: var(--font-lg);
+}
+.banner {
+  margin-inline: auto;
+  padding: 4rem 2rem;
+  background-image:
+    linear-gradient(135deg, hsl(from var(--primary-bg) h s l / 0.2) 0%, hsl(from var(--primary-bg) h s l / 0.72) 45%, hsl(from var(--primary-bg) h s l / 0.36) 100%),
+    url('https://picsum.photos/id/377/1400/700');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-shadow: 0 1px 2px hsla(33, 100%, 30%, 0.45);
+
+  & > h2 {
+    font-size: var(--font-xl);
+    color: var(--secondary-txt);
+    text-shadow: 2px 2px 1px hsl(from var(--primary-bg) h s l / 0.32);
+  }
+  & > .banner--content {
+    font-size: var(--font-sm);
+    line-height: 1.8;
+  }
+  & > button {
+    align-self: flex-end;
+    font-size: var(--font-sm);
+    color: var(--secondary-bg);
+    background-color: var(--secondary-txt);
+  }
+}
+
+.feature_box {
+  border-block-start: 1px solid var(--primary-bg);
+  padding-inline: 3rem;
+  padding-block-start: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  & > h3 {
+    font-size: var(--font-lg);
+    color: var(--primary-bg);
+  }
+  & > p {
+    color: var(--secondary-bg);
+  }
+  & > button {
+    color: var(--secondary-bg);
+    background-color: var(--secondary-txt);
+  }
+}
+.feature_box:nth-child(odd) > * {
+  justify-content: flex-start;
+  align-self: flex-end;
+  text-align: end;
+}
